@@ -6,7 +6,7 @@ const csvSchema = new mongoose.Schema({
     required: true,
   },
   header_row: {
-    type: [String],
+    type: [Object],
   },
   data_rows: {
     type: [Object],

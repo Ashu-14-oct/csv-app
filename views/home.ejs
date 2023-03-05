@@ -17,8 +17,8 @@
     <thead>
       <tr>
         <th>Filename</th>
-        <th>Header Row</th>
-        <th>Data Rows</th>
+        <th> </th>
+        <th> </th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -26,12 +26,14 @@
       <% files.forEach(function(file) { %>
         <tr>
           <td><%= file.filename %></td>
-          <td><%= file.header_row %></td>
-          <td>
+          <td> </td>
+          <td> </td>
+          <!-- <td><%= file.header_row %></td> -->
+          <!-- <td>
             <% file.data_rows.forEach(function(row) { %>
               <p><%= row %></p>
             <% }); %>
-          </td>
+          </td> -->
           <td>
             <a href="/csv/<%= file._id %>">View</a>
           </td>
