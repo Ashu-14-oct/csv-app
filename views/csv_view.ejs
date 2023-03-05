@@ -2,12 +2,24 @@
 <html>
 <head>
   <title><%= title %></title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("tbody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container mt-5">
     <div class="row">
       <div class="col-12">
         <h1>CSV File: <%= fileData.filename %></h1>
+        <input type="text" id="search" placeholder="Search...">
         <table class="table">
           <thead>
             <tr>
@@ -31,6 +43,7 @@
   </div>
 </body>
 </html>
+
 
 
 
