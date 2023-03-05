@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <h1>CSV File: <%= fileData.filename %></h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <% fileData.header_row.forEach(function(cell) { %>
+              <th><%= cell %></th>
+              <% }); %>
+            </tr>
+          </thead>
+          <tbody>
+            <% fileData.data_rows.forEach(function(row) { %>
+            <tr>
+              <% Object.values(row).forEach(function(cell) { %>
+              <td><%= cell %></td>
+              <% }); %>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
